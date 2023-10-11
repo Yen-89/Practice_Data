@@ -4,7 +4,7 @@
     <LogicalFolder Name="Connections" Type="2" Sorted="true">
       <Items>
         <ConnectionNode Name="DESKTOP-JN62KLC\MSSQLSERVER2022:sa">
-          <Created>2023-10-10T14:05:20.9704837-05:00</Created>
+          <Created>2023-10-10T14:13:41.0376442-05:00</Created>
           <Type>SQL</Type>
           <Server>DESKTOP-JN62KLC\MSSQLSERVER2022</Server>
           <UserName>sa</UserName>
@@ -13,16 +13,16 @@
           <LoginTimeout>30</LoginTimeout>
           <ExecutionTimeout>0</ExecutionTimeout>
           <ConnectionProtocol>NotSpecified</ConnectionProtocol>
-          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+          <ApplicationName />
         </ConnectionNode>
       </Items>
     </LogicalFolder>
     <LogicalFolder Name="Queries" Type="0" Sorted="true">
       <Items>
         <FileNode Name="SQLQuery1.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-JN62KLC\MSSQLSERVER2022:False:sa</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>DESKTOP-JN62KLC\MSSQLSERVER2022</AssociatedConnSrvName>
-          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
           <FullPath>SQLQuery1.sql</FullPath>
         </FileNode>
       </Items>
