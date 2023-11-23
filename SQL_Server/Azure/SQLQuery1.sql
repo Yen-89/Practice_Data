@@ -1,20 +1,36 @@
--- DDL
--- CREATE, ALTER, DROP, RENAME
-CREATE TABLE Product
-(
-	ID INT PRIMARY KEY,
-	Name VARCHAR(20) NOT NULL,
-	Price DECIMAL NULL
-);
+CREATE DATABASE AZURE;
 
-SELECT * FROM Product;
+USE AZURE
 
---DCL
--- permiso para que el usuario1 pueda seleccionar, insertar y eliminar de la tabla Product
-GRANT SELECT, INSERT, UPDATE
-ON Product
-To user1;
+CREATE TABLE Customer (
+	ID INT PRIMARY KEY NOT NULL,
+	Nombre VARCHAR (20),
+	Apellido VARCHAR (20),
+	Ciudad VARCHAR (20),
+	Edad INT,
+	Cargo VARCHAR (50),
+)
 
+SELECT * FROM Customer;
 
---DML
--- SELECT , INSERT, UPDATE, DELETE
+INSERT INTO Customer(ID,Nombre, Apellido,Ciudad, Edad,Cargo)
+VALUES (1,'Andrea', 'Ospina', 'Bello', 32 , 'Ingenieria de datos'),
+		(2,'Manuel', 'Cardozo', 'Medellin', 43, 'Ingenierio de sistemas'),
+		(3,'Maria', 'Cortez', 'Bogota', 25, 'Ingenieria de datos'),
+		(4,'Lyda', 'Osorio', 'Bello', 47, 'Ingenieria de sistemas'),
+		(5,'Daniel', 'Guos', 'Medellin', 29, 'Ingeniero de datos'),
+		(6,'Alejandro', 'Garcia', 'Bello', 39, 'Ingeniero de sistemas')
+
+SELECT*
+FROM Customer
+WHERE Ciudad = 'Bello';
+
+SELECT Nombre, Edad, Cargo , Ciudad
+FROM Customer
+WHERE Ciudad = 'Medellin'
+ORDER BY Nombre;
+
+SELECT Nombre, Edad, Cargo , Ciudad
+FROM Customer
+ORDER BY Nombre;
+
