@@ -1,8 +1,19 @@
 import requests
 
+import os
+from dotenv import load_dotenv
+
+# Cargar variables de entorno desde el archivo .env
+load_dotenv()
+
+# Clave de la API desde las variables de entorno
+api_key = os.getenv("API_KEY")
+
+# Usar la variable api_key para realizar la consulta a la API
+
 ciudad = input("Ingrese una ciudad: ")
 
-url = f"https://api.openweathermap.org/data/2.5/weather?q={ciudad}&appid=bcc938b34848481d2843119f11e2b331"
+url = f"https://api.openweathermap.org/data/2.5/weather?q={ciudad}&appid={api_key}"
 
 res = requests.get(url)
 
