@@ -9,28 +9,36 @@ load_dotenv()
 # Clave de la API desde las variables de entorno
 api_key = os.getenv("API_KEY")
 
-# Usar la variable api_key para realizar la consulta a la API
+# Verificar si la clave de la API está disponible
+if not api_key:
+    raise ValueError("La clave de la API no está configurada en el archivo .env")
 
-ciudad = input("Ingrese una ciudad: ")
+# Coordenadas de la ciudad (reemplazar con las coordenadas de la ciudad deseada)
+latitud = 6.24
+longitud = -75.58
 
-url = f"http://api.openweathermap.org/geo/1.0/direct?q={ciudad}&limit=5&appid={api_key}"
+# Construir la URL de la API con las coordenadas y la clave de la API
+url = f"https://api.openweathermap.org/data/3.0/onecall?lat={latitud}&lon={longitud}&appid={api_key}"
 
+# Realizar la solicitud GET a la API
 res = requests.get(url)
 
-data = res.json()
+# Verificar si la solicitud fue exitosa (código de respuesta 200)
+if res.status_code == 200:
+    # Convertir la respuesta JSON a un diccionario
+    data = res.json()
 
-#definir 3 caracteristicas ambientales: temperatura, velocidad del viento y descripción general meterolo, lat y lonh
+    # Verificar si hay alertas disponibles
+    alertas = data.get("alerts", [])
 
-#temp = data["main"]["temp"] #atributos main y temp porque en la data, temp es un diccionario que está dentro de otro diccionario que es main
-#vel_viento = data["wind"]["speed"]
+    if alertas:
+        # Acceder a la descripción de la primera alerta
+        descripcion = alertas[0]["description"]
+        print("Descripción de la primera alerta:", descripcion)
+    else:
+        print("No hay alertas disponibles.")
 
-latitud = data["lat"]["lat"]
-longitud = data["lon"]["lon"]
-
-#descripcion = data["weather"][0]["description"] #se pone el 0 ya que description es diferente, ya que es un diccionario dentro de una lista 
-
-#print("la temperatura es: ", temp)
-#print("la velocidad del viento es : ", vel_viento)
-print("la latitud es: ", latitud)
-print("la longitud es: ", longitud)
-#print("la descripción es: ", descripcion)
+else:
+    # Imprimir un mensaje de error si la solicitud no fue exitosa
+    print(f"Error al realizar la solicitud. Código de respuesta: {res.status_code}")
+    print(res.text)
