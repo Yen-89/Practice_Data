@@ -9,6 +9,7 @@ load_dotenv()
 # Clave de la API desde las variables de entorno
 api_key = os.getenv("API_KEY")
 
+
 # Verificar si la clave de la API está disponible
 if not api_key:
     raise ValueError("La clave de la API no está configurada en el archivo .env")
@@ -22,6 +23,14 @@ url = f"https://api.openweathermap.org/data/3.0/onecall?lat={latitud}&lon={longi
 
 # Realizar la solicitud GET a la API
 res = requests.get(url)
+print("---------------------------")
+print("---------------------------")
+
+print(res)
+
+print("---------------------------")
+
+print("---------------------------")
 
 # Verificar si la solicitud fue exitosa (código de respuesta 200)
 if res.status_code == 200:
