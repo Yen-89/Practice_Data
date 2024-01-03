@@ -11,4 +11,17 @@ response = requests.get(url).json()
 
 #print(response)
 
+temp = response['main'] ['temp']
+wind_speed = response['wind']['speed']
+humidity = response['main']['humidity']
+descript = response ['weather'][0]['description']
+sunrise_time = dt.datetime.utcfromtimestamp(response['sys']['sunrise'] + response['timezone'])
+sunset_time = dt.datetime.utcfromtimestamp(response['sys']['sunset'] + response['timezone'])
 
+
+print(f"Temperature in {CITY} is: {temp}°K") 
+print(f"Humidity in {CITY} is: {humidity}%")
+print(f"Wind Speed in {CITY} is: {wind_speed}m/s")
+print(f"General Wather in {CITY} is: {descript}")
+print(f"Sun rises in {CITY} is: at {sunrise_time} at local time")
+print(f"Sun sets in {CITY} is: at {sunset_time} at local time")
