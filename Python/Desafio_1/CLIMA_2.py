@@ -9,7 +9,7 @@ CITY = input("Enter a city: ")
 url = f"https://api.openweathermap.org/data/2.5/weather?q={CITY}&appid={API_KEY}"
 response = requests.get(url).json()
 
-#print(response)
+##print(response)
 
 lon = response['coord']['lon']
 lat = response['coord']['lat']
