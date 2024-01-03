@@ -1,12 +1,12 @@
 import datetime as dt
 import requests
 
-BASE_URL = "https://api.openweathermap.org/data/2.5/weather?"
+##BASE_URL = "https://api.openweathermap.org/data/2.5/weather?"
 API_KEY = "bcc938b34848481d2843119f11e2b331"
 CITY = input("Enter a city: ")
 
-url = BASE_URL + "appid=" + API_KEY + "&q=" + CITY
-
+##url = BASE_URL + "appid=" + API_KEY + "&q=" + CITY
+url = f"https://api.openweathermap.org/data/2.5/weather?q={CITY}&appid={API_KEY}"
 response = requests.get(url).json()
 
 #print(response)
