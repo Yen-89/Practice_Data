@@ -11,7 +11,7 @@ response = requests.get(url).json()
 
 #print(response)
 
-temp = response['main'] ['temp']
+temp = response['main']['temp']
 wind_speed = response['wind']['speed']
 humidity = response['main']['humidity']
 descript = response ['weather'][0]['description']
