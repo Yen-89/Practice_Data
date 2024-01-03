@@ -6,7 +6,7 @@ API_KEY = "bcc938b34848481d2843119f11e2b331"
 CITY = input("Enter a city: ")
 
 ##url = BASE_URL + "appid=" + API_KEY + "&q=" + CITY
-url = f"https://api.openweathermap.org/data/2.5/weather?q={CITY}&appid={API_KEY}"
+url = f"https://api.openweathermap.org/data/2.5/weather?q={CITY}&appid={API_KEY}&units=metric"
 response = requests.get(url).json()
 
 ##print(response)
@@ -23,7 +23,7 @@ sunset_time = dt.datetime.utcfromtimestamp(response['sys']['sunset'] + response[
 
 print(f"Longitude in {CITY} is: {lon}")
 print(f"Latitude in {CITY} is: {lat}") 
-print(f"Temperature in {CITY} is: {temp}°K") 
+print(f"Temperature in {CITY} is: {temp}°C") 
 print(f"Humidity in {CITY} is: {humidity}%")
 print(f"Wind Speed in {CITY} is: {wind_speed}m/s")
 print(f"General Wather in {CITY} is: {descript}")
