@@ -9,7 +9,7 @@ latitud = 6.25
 longitud = -75.56
 
 # Construir la URL de la API con las coordenadas y la clave de la API
-url = f"https://api.openweathermap.org/data/2.5/weather?lat={latitud}.34&lon={longitud}&appid={api_key}"
+url = f"https://api.openweathermap.org/data/2.5/weather?lat={latitud}&lon={longitud}&appid={api_key}"
 response = requests.get(url).json()
 
 print(response)
