@@ -7,7 +7,7 @@ api_key = "bcc938b34848481d2843119f11e2b331"
 # Coordenadas de la ciudad
 city_name = "Medellin"
 country_code = 170
-limit = 5
+limit = 1
 
 
 
@@ -17,3 +17,5 @@ url = f"http://api.openweathermap.org/geo/1.0/direct?q={city_name},{country_code
 response = requests.get(url).json()
 
 print(response)
+
+

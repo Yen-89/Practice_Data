@@ -12,8 +12,6 @@ longitud = -75.56
 url = f"https://api.openweathermap.org/data/2.5/weather?lat={latitud}&lon={longitud}&appid={api_key}&units=metric"
 response = requests.get(url).json()
 
-##weather?lat=@{pipeline().parameters.lat}&lon=@{pipeline().parameters.lon}&appid=bcc938b34848481d2843119f11e2b331&units=metric
-##print(response)
 
 lon = response['coord']['lon']
 lat = response['coord']['lat']
